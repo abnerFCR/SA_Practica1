@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="index.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      function inverse() {
+        var num = document.getElementById("n1");
+        num.value = 1/num.value;
+      }
+      
+      function square() {
+        var num = document.getElementById("n1");
+        num.value = num.value * num.value;
+      
+      }
+      </script>
+      <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+      <script>
+          Splitting();
+      </script>
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div class="alrazy-title" data-splitting>Calculadora</div>
+    <div>
+      Numero:
+      <input type="text" id="n1"><p>
+    
+      <button onclick="square()"> x<sup>2</sup> </button>
+      <button onclick="inverse()"> 1/x </button>
+    </div>    
+  </body>
+</html>
+
+
+

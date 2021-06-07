@@ -12,13 +12,23 @@ pipeline {
         appName = "variable" 
     }
     stages {
-        stage("paso 1"){
+        stage ('install') {
             steps {
-                script {			
-                    sh "echo 'hola mundo'"
-                }
-            }   
+                sh "npm install"
+            }
         }
+
+        stage ('run') {
+            steps {
+                sh "node index.js"
+            }
+        }
+
+        stage ('test') {
+            steps {
+                sh "npm test"
+            }
+        }      
     }
     //El apartado post se ejecuta siempre al terminar los stages
     post {

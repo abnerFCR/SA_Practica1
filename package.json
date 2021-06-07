@@ -1,0 +1,15 @@
+{
+    "name": "calculadora",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --recursive tests"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "mocha": "^5.0.0",
+        "unit.js": "^2.0.0"
+    }
+}
