@@ -8,12 +8,14 @@ pipeline {
     stages {
         stage ('install') {
             steps {
+                sh "sudo apt install npm"
                 sh "npm install"
             }
         }
 
         stage ('run') {
             steps {
+                sh "sudo apt install node"
                 sh "node index.js"
             }
         }
