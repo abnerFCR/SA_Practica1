@@ -20,6 +20,11 @@
         num.value = num.value * num.value;
       
       }
+      function doble() {
+        var num = document.getElementById("n1");
+        num.value = 2 * num.value;
+      
+      }
       </script>
       <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
       <script>
@@ -28,13 +33,14 @@
     <title>Calculadora</title>
   </head>
   <body>
-    <div class="alrazy-title" data-splitting>Calculador</div>
+    <div class="alrazy-title" data-splitting>Calculadora</div>
     <div>
       Numero:
       <input type="text" id="n1"><p>
     
       <button onclick="square()"> x<sup>2</sup> </button>
       <button onclick="inverse()"> 1/x </button>
+      <button onclick="doble()">  </button>
     </div>    
   </body>
 </html>
