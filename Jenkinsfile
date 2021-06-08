@@ -38,7 +38,7 @@ pipeline {
         }
         //Sucess se ejecuta si se ejecuto todo con exito
         success {
-            sh "cp index.html /var/www/html"
+            sh "sudo cp index.html /var/www/html"
             sh "cp index.css /var/www/html"
             sh "cp index.js /var/www/html"
             sh "echo 'Despliegue correcto' "
