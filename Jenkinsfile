@@ -12,19 +12,19 @@ pipeline {
         appName = "variable" 
     }
     stages {
-        stage ('install') {
+        stage ('Instalacion de dependencias') {
             steps {
                 sh "npm install"
             }
         }
 
-        stage ('run') {
+        stage ('Run') {
             steps {
                 sh "node index.js"
             }
         }
 
-        stage ('test') {
+        stage ('Realizacion de Test') {
             steps {
                 sh "npm test"
             }
@@ -39,9 +39,9 @@ pipeline {
         }
         //Sucess se ejecuta si se ejecuto todo con exito
         success {
-            sh "cp index.html /var/www/html -f"
-            sh "cp index.css /var/www/html -f"
-            sh "cp index.js /var/www/html -f"
+            sh "cp ~/.jenkins/index.html /var/www/html -f"
+            sh "cp ~/.jenkins/index.css /var/www/html -f"
+            sh "cp ~/.jenkins/index.js /var/www/html -f"
             sh "echo 'Despliegue correcto' "
         }
         //Failure se ejecuta si hubo alguna falla
