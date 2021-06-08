@@ -34,14 +34,13 @@ pipeline {
     post {
         //Always se ejecuta siempre que terminan los stages, sin importar el estado 
         always {          
-            deleteDir()
             sh "echo 'fase always'"
         }
         //Sucess se ejecuta si se ejecuto todo con exito
         success {
-            sh "cp ~/.jenkins/index.html /var/www/html -f"
-            sh "cp ~/.jenkins/index.css /var/www/html -f"
-            sh "cp ~/.jenkins/index.js /var/www/html -f"
+            sh "cp index.html /var/www/html"
+            sh "cp index.css /var/www/html"
+            sh "cp index.js /var/www/html"
             sh "echo 'Despliegue correcto' "
         }
         //Failure se ejecuta si hubo alguna falla
