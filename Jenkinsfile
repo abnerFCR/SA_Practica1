@@ -37,6 +37,8 @@ pipeline {
             deleteDir()
             sh "echo 'fase always'"
             sh "ls"
+            sh "cd .."
+            sh "ls"
         }
         //Sucess se ejecuta si se ejecuto todo con exito
         success {
