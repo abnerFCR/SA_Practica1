@@ -1,9 +1,7 @@
 import groovy.json.JsonSlurperClassic
-
 def jsonParse(def json) {
     new groovy.json.JsonSlurperClassic().parseText(json)
 }
-
 pipeline {
     agent {
         label 'master' 
@@ -17,13 +15,11 @@ pipeline {
                 sh "npm install"
             }
         }
-
         stage ('Run') {
             steps {
                 sh "node index.js"
             }
         }
-
         stage ('Realizacion de Test') {
             steps {
                 sh "npm test"
