@@ -1,0 +1,29 @@
+---
+
+- hosts: servidor
+  become: true
+  tasks:
+  - name: Agregando contenido 
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: Bajando imagen Docker
+    apt_repository:
+      repo: deb https://download.docker.com/linux/ubuntu bionic stable
+      state: present
+  - name: Instalar Docker
+    apt: update_cache=yes name=docker-ce state=latest
+
+  - name: Instalar docker-compose
+    remote_user: ubuntu
+    get_url: 
+      url : https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64
+      dest: /usr/local/bin/docker-compose
+      mode: 'g+x,u+x'
+
+  - name: Instalo Nodejs 
+    apt: name=nodejs state=present
+  - name: Instalo npm
+    npm:
+      name: "npm@latest"
+      global: yes
+      state: present
